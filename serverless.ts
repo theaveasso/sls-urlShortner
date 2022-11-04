@@ -35,7 +35,7 @@ const serverlessConfiguration: AWS = {
 							'dynamodb:DeleteItem',
 						],
 						Resource:
-							'arn:aws:dynamodb:ap-souteast-1:*:table/${self:custom.urlTableName}',
+							'arn:aws:dynamodb:${self:provider.region}:${aws:accountId}:table/${self:custom.urlTableName}',
 					},
 				],
 			},
@@ -44,7 +44,7 @@ const serverlessConfiguration: AWS = {
 			AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1',
 			NODE_OPTIONS: '--enable-source-maps --stack-trace-limit=1000',
 
-			TABLE_NAME: 'self:custom.urlTableName',
+			TABLE_NAME: '${self:custom.urlTableName}',
 			BASE_URL: {
 				'Fn::Join': [
 					'',
@@ -79,7 +79,7 @@ const serverlessConfiguration: AWS = {
 				WriteCapacityUnits: 1,
 			},
 		},
-		urlTableName: '${sls:stage}-urlTable',
+		urlTableName: '${sls:stage}-url-Table',
 		esbuild: {
 			bundle: true,
 			minify: false,

@@ -1,6 +1,6 @@
 @host = http://localhost:3000
 
-POST  {{host}}/ 
+POST  https://keg9hnsqva.execute-api.ap-southeast-1.amazonaws.com/
 Content-Type: application/json
 
 {
