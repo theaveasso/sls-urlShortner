@@ -1,0 +1,8 @@
+@host = http://localhost:3000
+
+POST  {{host}}/ 
+Content-Type: application/json
+
+{
+  "url": "https://theaveasso.com"
+}
