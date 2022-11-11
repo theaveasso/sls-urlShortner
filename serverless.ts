@@ -14,7 +14,7 @@ const serverlessConfiguration: AWS = {
 	provider: {
 		name: 'aws',
 		runtime: 'nodejs14.x',
-		profile: 'theaveasso',
+		profile: 'default',
 		region: 'ap-southeast-1',
 		apiGateway: {
 			minimumCompressionSize: 1024,
@@ -74,11 +74,11 @@ const serverlessConfiguration: AWS = {
 				inMemory: true,
 				migrate: true,
 			},
-			ProvisionedThroughput: {
-				ReadCapacityUnits: 1,
-				WriteCapacityUnits: 1,
+			migration: {
+				dir: 'resources/offline/migration',
 			},
 		},
+
 		urlTableName: '${sls:stage}-url-Table',
 		esbuild: {
 			bundle: true,

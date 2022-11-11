@@ -18,7 +18,7 @@ export const handler = async (events: APIGatewayProxyEvent) => {
 			return formatJSONResponse({
 				statusCode: 401,
 				data: {
-					message: 'Required Url',
+					message: 'Missing URL',
 				},
 			});
 		}

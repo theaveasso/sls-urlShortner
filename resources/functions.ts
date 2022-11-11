@@ -12,6 +12,17 @@ const functions: AWS['functions'] = {
 			},
 		],
 	},
+	getURL: {
+		handler: 'src/functions/getURL.handler',
+		events: [
+			{
+				httpApi: {
+					path: '/{code}',
+					method: 'get',
+				},
+			},
+		],
+	},
 };
 
 export default functions;

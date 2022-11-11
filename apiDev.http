@@ -1,8 +1,11 @@
 @host = http://localhost:3000
-
-POST  https://keg9hnsqva.execute-api.ap-southeast-1.amazonaws.com/
+# https://keg9hnsqva.execute-api.ap-southeast-1.amazonaws.com/
+POST {{host}}/
 Content-Type: application/json
 
 {
   "url": "https://theaveasso.com"
 }
+###
+
+GET {{host}}/590a1189
